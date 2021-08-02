@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
 const Header = () => {
@@ -24,17 +24,17 @@ const Header = () => {
 
                         </Nav>
                         <Nav>
-                            <Nav.Link to="/home"><strong>Home</strong></Nav.Link>
-                            <Nav.Link to="/destination"><strong>Destination</strong></Nav.Link>
-                            <Nav.Link to="/blog"><strong>Blog</strong></Nav.Link>
-                            <Nav.Link to="/contact"><strong>Contact</strong></Nav.Link>
+                            <Nav.Link as={Link} to="/home"><strong>Home</strong></Nav.Link>
+                            <Nav.Link as={Link} to="/destination"><strong>Destination</strong></Nav.Link>
+                            <Nav.Link as={Link} to="/blog"><strong>Blog</strong></Nav.Link>
+                            <Nav.Link as={Link} to="/contact"><strong>Contact</strong></Nav.Link>
                             {loggedInUser.displayName ? (
-                                <b>
-                                    <span>Welcome!</span> {loggedInUser.displayName}
-                                </b>
+                                <>
+                                  <strong> Welcome! {loggedInUser.displayName} </strong>  
+                                </>
                             ) : (
                                 <Nav.Link as={Link} to="/login" className="loginMenu">
-                                    Login
+                                   <Button> Login</Button>
                                 </Nav.Link>
                             )}
                         </Nav>

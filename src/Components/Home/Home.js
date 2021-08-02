@@ -7,9 +7,7 @@ const Home = () => {
         backgroundImage: `url('https://i.ibb.co/S0NRPMB/background.jpg')`,
         backgroundSize: 'cover', 
         height: '100vh',
-        backgroundRepeat: 'no-repeat',
-
-
+        backgroundRepeat: 'no-repeat'
     }
     return (
         <div style={backgroundImageStyle} className='main-section'>

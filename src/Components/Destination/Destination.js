@@ -1,15 +1,15 @@
 import React from "react";
 import { Card, Form } from "react-bootstrap";
+import { Map } from "react-bootstrap-icons";
 import { useParams } from "react-router";
-import fakeData from "../fakeData/fakeData";
-import "./Destination.css";
-import GoogleMap from "./GoogleMap";
+import fakeData from "../FakeData/FakeData";
+import '../GoogleMap/GoogleMap'
 const Destination = () => {
   const { name } = useParams();
   const found = fakeData.find((element) => element.name === name);
 
   const { image } = found;
-
+  
   return (
     <div className="container">
       <div className="row">
@@ -31,7 +31,7 @@ const Destination = () => {
             <img src={image} alt="" />
           </Card>
         </div>
-        <div className="col-md-8">{<GoogleMap></GoogleMap>}</div>
+        <div className="col-md-8">{<Map></Map>}</div>
       </div>
     </div>
   );
